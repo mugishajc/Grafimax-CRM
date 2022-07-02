@@ -7,7 +7,7 @@
             <a href="{{route('dashboard')}}">
                 <!-- <img class="img-fluid" src="{{ asset(Storage::url('logo/logo.png')) }}" alt="image" width="">
              -->
-             Grafimax CRM
+             JDD Hotels CRM
             </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
@@ -51,7 +51,7 @@
                     </li>
                 @endif
             @endif
-<!-- 
+<!--
             @if(Gate::check('manage lead') || \Auth::user()->type=='client')
                 <li class="{{ (Request::segment(1) == 'leads')?'active':''}}">
                     <a class="nav-link" href="{{ route('leads.index') }}"><i class="fab fa-dribbble"></i> <span>{{__('Leads')}}</span></a>
@@ -59,16 +59,16 @@
 
             @endif -->
 
-            @if(Gate::check('manage project'))
+            {{--  @if(Gate::check('manage project'))
                 <li class="{{ (Request::segment(1) == 'projects')?'active open':''}}">
                     <a class="nav-link" href="{{ route('projects.index') }}"><i class="fas fa-tasks"></i> <span>Job</span></a>
                 </li>
             @endif
-<!--             
+<!--
                 <li class="{{ (Request::segment(1) == 'jobs')?'active open':''}}">
                     <a class="nav-link" href="{{ route('jobs.index') }}"><i class="fab fa-dribbble"></i> <span>Job</span></a>
-                </li> -->
-            
+                </li> -->  --}}
+
             @if(\Auth::user()->type!='super admin')
                 <li class="{{ (Request::segment(1) == 'calender')?'active open':''}}">
                     <a class="nav-link" href="{{ route('calender.index') }}"><i class="fas fa-calendar"></i> <span>{{__('Calender')}}</span></a>
@@ -80,7 +80,7 @@
                         <ul class="dropdown-menu {{ (Request::segment(1) == 'users' || Request::segment(1) == 'clients' || Request::segment(1) == 'roles')?'display:block':''}}">
                             @can('manage user')
                                 <li class="{{ (Request::route()->getName() == 'users.index' || Request::route()->getName() == 'users.create' || Request::route()->getName() == 'users.edit') ? ' active' : '' }}">
-                                    <a class="nav-link" href="#">Stock in</a>
+                                    <a class="nav-link" href="{{ route('Inventory.index') }}">Stock in</a>
                                 </li>
                             @endcan
                             @can('manage client')
@@ -91,7 +91,7 @@
                         </ul>
                     </li>
 
-<!-- 
+<!--
             @if(Gate::check('manage plan'))
                 <li class="{{ (Request::segment(1) == 'plans')?'active':''}}">
                     <a class="nav-link" href="{{ route('plans.index') }}"><i class="fas fa-trophy"></i><span>{{__('Plan')}}</span></a>
@@ -147,30 +147,30 @@
                 <li class="dropdown {{ (Request::segment(1) == 'leadstages' || Request::segment(1) == 'projectstages' ||  Request::segment(1) == 'leadsources' ||  Request::segment(1) == 'labels' ||  Request::segment(1) == 'productunits' ||  Request::segment(1) == 'expensescategory' ||  Request::segment(1) == 'payments' ||  Request::segment(1) == 'bugstatus')? 'active':''}}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cog"></i> <span>Constant</span></a>
                     <ul class="dropdown-menu {{ (Request::segment(1) == 'leadstages' || Request::segment(1) == 'projectstages' ||  Request::segment(1) == 'leadsources' ||  Request::segment(1) == 'labels' ||  Request::segment(1) == 'productunits' ||  Request::segment(1) == 'expensescategory' ||  Request::segment(1) == 'payments' ||  Request::segment(1) == 'bugstatus')? 'display:block':''}}">
-                        @can('manage lead stage')
+                        {{--  @can('manage lead stage')
                             <li class="{{ (Request::route()->getName() == 'leadstages.index' ) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('leadstages.index')}}"> {{__('Lead Stage')}}</a>
                             </li>
-                        @endcan
+                        @endcan  --}}
 
-                        @can('manage project stage')
+                        {{--  @can('manage project stage')
                             <li class="{{ (Request::route()->getName() == 'projectstages.index' ) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('projectstages.index')}}"> {{__('Project Stage')}}</a>
                             </li>
 
-                        @endcan
+                        @endcan  --}}
 
-                        @can('manage lead source')
+                        {{--  @can('manage lead source')
                             <li class="{{ (Request::route()->getName() == 'leadsources.index' ) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('leadsources.index')}}">{{__('Lead Source')}}</a>
                             </li>
-                        @endcan
-                        @can('manage label')
+                        @endcan  --}}
+                        {{--  @can('manage label')
 
                             <li class="{{ (Request::route()->getName() == 'labels.index' ) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('labels.index')}}"> {{__('Lable')}}</a>
                             </li>
-                        @endcan
+                        @endcan  --}}
 
                         @can('manage product unit')
                             <li class="{{ (Request::route()->getName() == 'productunits.index' ) ? 'active' : '' }}">
@@ -189,13 +189,13 @@
                                 <a class="nav-link" href="{{route('payments.index')}}">{{__('Payment Method')}}</a>
                             </li>
                         @endcan
-                        <li class="{{ (Request::segment(1) == 'bugstatus')?'active open':''}}">
+                        {{--  <li class="{{ (Request::segment(1) == 'bugstatus')?'active open':''}}">
                             <a class="nav-link" href="{{ route('bugstatus.index') }}">{{__('Bug Status')}}</a>
-                        </li>
+                        </li>  --}}
                     </ul>
                 </li>
             @endif
-<!-- 
+<!--
             @if(Gate::check('manage system settings'))
                 <li class="{{ (Request::route()->getName() == 'systems.index') ? ' active' : '' }}">
                     <a class="nav-link" href="{{ route('systems.index') }}"><i class="fas fa-sliders-h"></i> <span>{{  __('System Setting') }} </span></a>

@@ -13,12 +13,12 @@
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
         </ul>
-        <input class="form-control" type="search" placeholder="Job & Task Search here..." aria-label="Search" data-width="250">
+        
 
     </form>
 
     <ul class="navbar-nav navbar-right">
-<!-- 
+<!--
         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage language')): ?>
             <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg language-dd"><i class="fas fa-language"></i></a>
                 <div class="dropdown-menu dropdown-list dropdown-menu-right">
@@ -30,7 +30,7 @@
                             <span> <?php echo e(__('Create & Customize')); ?></span>
                         </a>
                     <?php endif; ?>
-                    
+
                     <div class="dropdown-list-content dropdown-list-icons">
                         <?php $__currentLoopData = $languages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <a href="<?php echo e(route('change.language',$language)); ?>" class="dropdown-item dropdown-item-unread <?php if($language == $currantLang): ?> active-language <?php endif; ?>">

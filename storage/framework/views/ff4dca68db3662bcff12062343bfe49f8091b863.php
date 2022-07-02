@@ -37,41 +37,7 @@
                             <div class="table-responsive">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="constant-table">
-                                            <table class="table table-striped">
-                                                <thead class="">
-                                                <tr>
-                                                    <th scope="col" style="width: 60%;"></th>
-                                                    <th scope="col" style="width: 20%;"></th>
-                                                    <th scope="col" style="width: 10%;"></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody  class="">
-                                                <?php $__currentLoopData = $productunits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $productunit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <tr data-id="<?php echo e($productunit->id); ?>">
-                                                        <td>
-                                                            <a><?php echo e($productunit->name); ?></a>
-                                                        </td>
-                                                        <td>
-                                                            <span class="text-muted"><?php echo e($productunit->created_at); ?></span>
-                                                        </td>
-                                                        <td class="table-actions">
-                                                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('edit product unit')): ?>
-                                                                <a href="#" class="table-action" data-url="<?php echo e(route('productunits.edit',$productunit->id)); ?>" data-ajax-popup="true" data-title="<?php echo e(__('Edit Lead Source')); ?>" class="table-action" data-toggle="tooltip" data-original-title="<?php echo e(__('Edit')); ?>"><i class="far fa-edit"></i></a>
-                                                            <?php endif; ?>
-                                                            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('delete product unit')): ?>
-                                                                <a href="#" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="<?php echo e(__('Delete')); ?>" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="document.getElementById('delete-form-<?php echo e($productunit->id); ?>').submit();"><i class="far fa-trash-alt"></i></a>
-                                                                <?php echo Form::open(['method' => 'DELETE', 'route' => ['productunits.destroy', $productunit->id],'id'=>'delete-form-'.$productunit->id]); ?>
-
-                                                                <?php echo Form::close(); ?>
-
-                                                            <?php endif; ?>
-                                                        </td>
-                                                    </tr>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                        
 
                                     </div>
                                 </div>

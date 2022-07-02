@@ -156,7 +156,7 @@
                     </div>
                     <div class="card-wrap">
                         <div class="card-header">
-                            <h4>TOTAL JOBS</h4>
+                            <h4>Stock Alert</h4>
                         </div>
                     </div>
                     <div class="card-stats">
@@ -318,9 +318,9 @@
                                             <td><?php echo e(Auth::user()->dateFormat($invoice->due_date)); ?></td>
                                             <td>
                                                 <a href="<?php echo e(route('invoices.show',$invoice->id)); ?>" class="btn btn-primary"><i class="fas fa-eye"></i></a>
-                                            
+
                                             </td>
-                                            
+
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </table>

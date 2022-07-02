@@ -36,7 +36,7 @@
                             <div class="table-responsive">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="constant-table">
+                                        {{--  <div class="constant-table">
                                             <table class="table table-striped">
                                                 <thead class="">
                                                 <tr>
@@ -68,7 +68,7 @@
                                                 @endforeach
                                                 </tbody>
                                             </table>
-                                        </div>
+                                        </div>  --}}
 
                                     </div>
                                 </div>

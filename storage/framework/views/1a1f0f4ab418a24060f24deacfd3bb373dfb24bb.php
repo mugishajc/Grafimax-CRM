@@ -7,7 +7,7 @@
             <a href="<?php echo e(route('dashboard')); ?>">
                 <!-- <img class="img-fluid" src="<?php echo e(asset(Storage::url('logo/logo.png'))); ?>" alt="image" width="">
              -->
-             Grafimax CRM
+             JDD Hotels CRM
             </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
@@ -51,7 +51,7 @@
                     </li>
                 <?php endif; ?>
             <?php endif; ?>
-<!-- 
+<!--
             <?php if(Gate::check('manage lead') || \Auth::user()->type=='client'): ?>
                 <li class="<?php echo e((Request::segment(1) == 'leads')?'active':''); ?>">
                     <a class="nav-link" href="<?php echo e(route('leads.index')); ?>"><i class="fab fa-dribbble"></i> <span><?php echo e(__('Leads')); ?></span></a>
@@ -59,16 +59,8 @@
 
             <?php endif; ?> -->
 
-            <?php if(Gate::check('manage project')): ?>
-                <li class="<?php echo e((Request::segment(1) == 'projects')?'active open':''); ?>">
-                    <a class="nav-link" href="<?php echo e(route('projects.index')); ?>"><i class="fas fa-tasks"></i> <span>Job</span></a>
-                </li>
-            <?php endif; ?>
-<!--             
-                <li class="<?php echo e((Request::segment(1) == 'jobs')?'active open':''); ?>">
-                    <a class="nav-link" href="<?php echo e(route('jobs.index')); ?>"><i class="fab fa-dribbble"></i> <span>Job</span></a>
-                </li> -->
             
+
             <?php if(\Auth::user()->type!='super admin'): ?>
                 <li class="<?php echo e((Request::segment(1) == 'calender')?'active open':''); ?>">
                     <a class="nav-link" href="<?php echo e(route('calender.index')); ?>"><i class="fas fa-calendar"></i> <span><?php echo e(__('Calender')); ?></span></a>
@@ -80,7 +72,7 @@
                         <ul class="dropdown-menu <?php echo e((Request::segment(1) == 'users' || Request::segment(1) == 'clients' || Request::segment(1) == 'roles')?'display:block':''); ?>">
                             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage user')): ?>
                                 <li class="<?php echo e((Request::route()->getName() == 'users.index' || Request::route()->getName() == 'users.create' || Request::route()->getName() == 'users.edit') ? ' active' : ''); ?>">
-                                    <a class="nav-link" href="#">Stock in</a>
+                                    <a class="nav-link" href="<?php echo e(route('Inventory.index')); ?>">Stock in</a>
                                 </li>
                             <?php endif; ?>
                             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage client')): ?>
@@ -91,7 +83,7 @@
                         </ul>
                     </li>
 
-<!-- 
+<!--
             <?php if(Gate::check('manage plan')): ?>
                 <li class="<?php echo e((Request::segment(1) == 'plans')?'active':''); ?>">
                     <a class="nav-link" href="<?php echo e(route('plans.index')); ?>"><i class="fas fa-trophy"></i><span><?php echo e(__('Plan')); ?></span></a>
@@ -147,30 +139,12 @@
                 <li class="dropdown <?php echo e((Request::segment(1) == 'leadstages' || Request::segment(1) == 'projectstages' ||  Request::segment(1) == 'leadsources' ||  Request::segment(1) == 'labels' ||  Request::segment(1) == 'productunits' ||  Request::segment(1) == 'expensescategory' ||  Request::segment(1) == 'payments' ||  Request::segment(1) == 'bugstatus')? 'active':''); ?>">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cog"></i> <span>Constant</span></a>
                     <ul class="dropdown-menu <?php echo e((Request::segment(1) == 'leadstages' || Request::segment(1) == 'projectstages' ||  Request::segment(1) == 'leadsources' ||  Request::segment(1) == 'labels' ||  Request::segment(1) == 'productunits' ||  Request::segment(1) == 'expensescategory' ||  Request::segment(1) == 'payments' ||  Request::segment(1) == 'bugstatus')? 'display:block':''); ?>">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage lead stage')): ?>
-                            <li class="<?php echo e((Request::route()->getName() == 'leadstages.index' ) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(route('leadstages.index')); ?>"> <?php echo e(__('Lead Stage')); ?></a>
-                            </li>
-                        <?php endif; ?>
+                        
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage project stage')): ?>
-                            <li class="<?php echo e((Request::route()->getName() == 'projectstages.index' ) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(route('projectstages.index')); ?>"> <?php echo e(__('Project Stage')); ?></a>
-                            </li>
+                        
 
-                        <?php endif; ?>
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage lead source')): ?>
-                            <li class="<?php echo e((Request::route()->getName() == 'leadsources.index' ) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(route('leadsources.index')); ?>"><?php echo e(__('Lead Source')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage label')): ?>
-
-                            <li class="<?php echo e((Request::route()->getName() == 'labels.index' ) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(route('labels.index')); ?>"> <?php echo e(__('Lable')); ?></a>
-                            </li>
-                        <?php endif; ?>
+                        
+                        
 
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage product unit')): ?>
                             <li class="<?php echo e((Request::route()->getName() == 'productunits.index' ) ? 'active' : ''); ?>">
@@ -189,13 +163,11 @@
                                 <a class="nav-link" href="<?php echo e(route('payments.index')); ?>"><?php echo e(__('Payment Method')); ?></a>
                             </li>
                         <?php endif; ?>
-                        <li class="<?php echo e((Request::segment(1) == 'bugstatus')?'active open':''); ?>">
-                            <a class="nav-link" href="<?php echo e(route('bugstatus.index')); ?>"><?php echo e(__('Bug Status')); ?></a>
-                        </li>
+                        
                     </ul>
                 </li>
             <?php endif; ?>
-<!-- 
+<!--
             <?php if(Gate::check('manage system settings')): ?>
                 <li class="<?php echo e((Request::route()->getName() == 'systems.index') ? ' active' : ''); ?>">
                     <a class="nav-link" href="<?php echo e(route('systems.index')); ?>"><i class="fas fa-sliders-h"></i> <span><?php echo e(__('System Setting')); ?> </span></a>

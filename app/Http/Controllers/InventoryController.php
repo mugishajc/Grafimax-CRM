@@ -21,4 +21,14 @@ class InventoryController extends Controller
 
 
     }
+
+
+    public function create()
+    {
+        if(\Auth::user()->can('create product unit')) {
+            return view('productunits.create');
+        }else{
+            return redirect()->back()->with('error','Permission denied.');
+        }
+    }
 }
