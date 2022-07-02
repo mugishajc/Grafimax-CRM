@@ -178,6 +178,12 @@
                             </li>
                         @endcan
 
+
+                            <li class="#">
+                                <a class="nav-link" href="{{route('products.index')}}">Products</a>
+                            </li>
+
+
                         @can('manage expense category')
                             <li class="{{ (Request::route()->getName() == 'expensescategory.index' ) ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('expensescategory.index')}}">{{__('Expense Category')}}</a>

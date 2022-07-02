@@ -152,6 +152,12 @@
                             </li>
                         <?php endif; ?>
 
+
+                            <li class="#">
+                                <a class="nav-link" href="<?php echo e(route('products.index')); ?>">Products</a>
+                            </li>
+
+
                         <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('manage expense category')): ?>
                             <li class="<?php echo e((Request::route()->getName() == 'expensescategory.index' ) ? 'active' : ''); ?>">
                                 <a class="nav-link" href="<?php echo e(route('expensescategory.index')); ?>"><?php echo e(__('Expense Category')); ?></a>

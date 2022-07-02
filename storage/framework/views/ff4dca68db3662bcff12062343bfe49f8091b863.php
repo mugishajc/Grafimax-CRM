@@ -1,20 +1,3 @@
-<head>
-    <script>
-    function myFunction()
-    {
-     quantity = parseInt(document.getElementById("quantity").value);
-     cost_value = parseInt(document.getElementById("cost_value").value);
-        if(!value1==""&&!cost_value=="")
-        {
-         sum = quantity * cost_value;
-         document.getElementById("total").value = sum;
-         console. log(sum);
-         alert(sum)
-        }
-    }
-    </script>
-    </head>
-
 <?php $__env->startSection('page-title'); ?>
     Add new Inventory
 <?php $__env->stopSection(); ?>
@@ -38,11 +21,12 @@
                         <div class="container">
 
 
-                            <form class="needs-validation" novalidate>
+                            <form action="<?php echo e(route('Inventory.create')); ?>" method="POST" class="needs-validation" novalidate>
+                                <?php echo csrf_field(); ?>
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
-                                    <label class="my-1 mr-2" for="quantity">Product Name</label>
-                                    <?php echo Form::select('product_name', $productnames, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')); ?>
+                                    <label class="my-1 mr-2" for="pn">Product Name</label>
+                                    <?php echo Form::select('ProdName', $productnames, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')); ?>
 
                                     <?php if ($errors->has('unit')) :
 if (isset($message)) { $messageCache = $message; }
@@ -57,7 +41,7 @@ endif; ?>
 
                                   <div class="form-group col-md-6">
                                     <label class="my-1 mr-2" for="quantity">Quantity</label>
-                                    <input type="number" class="custom-select my-1 mr-sm-2" id="validationServerUsername" onkeyup="myFunction() aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                                    <input type="number" class="custom-select my-1 mr-sm-2" id="validationServerUsername"name="QTY"  aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
                                     <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                       Quantity is needed!
                                     </div>
@@ -68,14 +52,20 @@ endif; ?>
                                 <div class="form-row">
                                   <div class="form-group col-md-6">
                                     <label class="my-1 mr-2" for="costvalue">Cost Value</label>
-                                    <input type="number" class="custom-select my-1 mr-sm-2" id="cost_value" onkeyup="myFunction() aria-describedby="inputGroupPrepend3 cost-value" required>
-                                    <div id="cost_value" class="invalid-feedback">
-                                      Cost value is needed!
-                                    </div>
+                                    <div class="input-group my-1 mr-2">
+                                        <div class="input-group-prepend">
+                                          <div class="input-group-text">RWF</div>
+                                        </div>
+                                        <input type="number" class="input-group-text"  id="cost_value"name="CV" aria-describedby="inputGroupPrepend3 cost-value" required>
+                                        <div id="cost_value" class="invalid-feedback">
+                                          Cost value is needed!
+                                        </div>
+                                      </div>
+
                                   </div>
                                   <div class="form-group col-md-6">
                                     <label class="my-1 mr-2" for="product_unit">Select Product Unit</label>
-                                    <?php echo Form::select('product_unit', $productunits, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')); ?>
+                                    <?php echo Form::select('PU', $productunits, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')); ?>
 
                                     <?php if ($errors->has('unit')) :
 if (isset($message)) { $messageCache = $message; }
@@ -101,13 +91,16 @@ endif; ?>
                                       </div>
                                     <div class="form-group col-md-6">
 
-                                      <label class="my-1 mr-2" for="total">Total Amount</label>
-                                       <span class=" custom-select my-1 mr-sm-2 badge badge-secondary">New</span>
+                                      <label class="my-1 mr-2" for="total">Note</label>
+
+                                       <textarea class="form-control" name="note" rows="5"></textarea>
 
 
                                     </div>
 
+
                                   </div>
+
 
                                 <div class="form-row justify-content-center">
                                 <div class="form-group col-md-6">

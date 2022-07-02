@@ -22,6 +22,7 @@
     </ul>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
+<br>
     <div class="row">
         <div class="col-md-12">
             <div class="portlet light portlet-fit portlet-datatable ">
@@ -33,7 +34,7 @@
                     <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('create product')): ?>
                         <span class="create-btn">
                         <a href="#" data-url="<?php echo e(route('products.create')); ?>" data-ajax-popup="true" data-title="<?php echo e(__('Create New Product')); ?>" class="btn btn-circle btn-outline btn-sm blue-madison">
-                        <i class="fa fa-plus"></i>  <?php echo e(__('Create')); ?>
+                        <i class="fa fa-plus color"></i>  <?php echo e(__('Create')); ?>
 
                     </a>
                      </span>

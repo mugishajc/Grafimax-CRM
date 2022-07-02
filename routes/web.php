@@ -177,7 +177,7 @@ Route::group(['middleware' => ['auth','xss',],], function (){
 
 Route::group(['middleware' => ['auth','xss',],], function (){
     Route::get('/Inventory', 'InventoryController@index')->name('Inventory.index');
-
+    Route::post('/Inventory', 'InventoryController@create')->name('Inventory.create');
 
 });
 

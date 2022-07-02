@@ -22,6 +22,7 @@
     </ul>
 @endsection
 @section('content')
+<br>
     <div class="row">
         <div class="col-md-12">
             <div class="portlet light portlet-fit portlet-datatable ">
