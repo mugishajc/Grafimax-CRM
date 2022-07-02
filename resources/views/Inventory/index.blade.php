@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+
+
 @section('page-title')
     Add new Inventory
 @endsection
@@ -17,24 +19,81 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between w-100">
-                            {{--  <h4>Create Inventory Unit</h4>  --}}
-                                                            {{--  <a href="#" class="btn btn-sm btn-warning" data-url=""  data-title="Create new stock">
-                                  <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.861 49.861">
-                                        <path d="M45.963 21.035h-17.14V3.896C28.824 1.745 27.08 0 24.928 0s-3.896 1.744-3.896 3.896v17.14H3.895C1.744 21.035 0 22.78 0 24.93s1.743 3.895 3.895 3.895h17.14v17.14c0 2.15 1.744 3.896 3.896 3.896s3.896-1.744 3.896-3.896v-17.14h17.14c2.152 0 3.896-1.744 3.896-3.895a3.9 3.9 0 0 0-3.898-3.896z" fill="#010002"></path></svg>
-                                  </span>
-                                    Manage Inventory
-                                </a>  --}}
 
-                        </div>
-                    </div>
                     <div class="card-body">
-                        <div class="row">
+                        <div class="container">
 
 
-data aho
+                            <form class="needs-validation" novalidate>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label class="my-1 mr-2" for="quantity">Product Name</label>
+                                    {!! Form::select('product_name', $productnames, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')) !!}
+                                    @error('unit')
+                                    <span class="invalid-unit" role="alert">
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                  </div>
+
+                                  <div class="form-group col-md-6">
+                                    <label class="my-1 mr-2" for="quantity">Quantity</label>
+                                    <input type="number" class="custom-select my-1 mr-sm-2" id="validationServerUsername"  aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                                    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                      Quantity is needed!
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label class="my-1 mr-2" for="costvalue">Cost Value</label>
+                                    <input type="number" class="custom-select my-1 mr-sm-2" id="cost_value" aria-describedby="inputGroupPrepend3 cost-value" required>
+                                    <div id="cost_value" class="invalid-feedback">
+                                      Cost value is needed!
+                                    </div>
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label class="my-1 mr-2" for="product_unit">Select Product Unit</label>
+                                    {!! Form::select('product_unit', $productunits, null,array('class' => 'custom-select my-1 mr-sm-2','required'=>'required')) !!}
+                                    @error('unit')
+                                    <span class="invalid-unit" role="alert">
+                                        <strong class="text-danger">{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                </div>
+
+
+
+
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label class="my-1 mr-2" for="validationDoneby">Done by</label>
+                                        <input type="text" class="custom-select my-1 mr-sm-2" id="validationServer01"  value="{{Auth::user()->name}}" readonly>
+
+                                      </div>
+                                    <div class="form-group col-md-6">
+
+                                      <label class="my-1 mr-2" for="total">Total Amount</label>
+                                       <span class=" custom-select my-1 mr-sm-2 badge badge-secondary">New</span>
+
+
+                                    </div>
+
+                                  </div>
+
+                                <div class="form-row justify-content-center">
+                                <div class="form-group col-md-6">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button type="reset" class="btn btn-danger">Cancel</button>
+                                </div>
+
+                                </div>
+                              </form>
+
 
 
                         </div>
