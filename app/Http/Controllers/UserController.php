@@ -97,8 +97,8 @@ class UserController extends Controller
                 $objUser    = \Auth::user();
                 $total_user = $objUser->countUsers();
                 $plan       = Plan::find($objUser->plan);
-                if($total_user < $plan->max_users || $plan->max_users == -1)
-                {
+                // if($total_user < $plan->max_users || $plan->max_users == -1)
+                // {
                     $role_r                = Role::findById($request->role);
                     $request['password']   = Hash::make($request->password);
                     $request['type']       = $role_r->name;
@@ -108,11 +108,11 @@ class UserController extends Controller
                     $user = User::create($request->all());
 
                     $user->assignRole($role_r);
-                }
-                else
-                {
-                    return redirect()->back()->with('error', __('Your user limit is over, Please upgrade plan.'));
-                }
+                // }
+                // else
+                // {
+                //     return redirect()->back()->with('error', __('Your user limit is over, Please upgrade plan.'));
+                // }
             }
 
 
@@ -262,7 +262,7 @@ class UserController extends Controller
             $extension       = $request->file('profile')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
 
-            $dir        = storage_path('app/public/avatar/');
+            $dir        = storage_path('public/avatar/');
             $image_path = $dir . $userDetail['avatar'];
 
             if(File::exists($image_path))

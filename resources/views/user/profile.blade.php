@@ -27,7 +27,7 @@
                         <div class="profile-sidebar">
                             <div class="portlet light profile-sidebar-portlet ">
                                 <div class="profile-userpic">
-                                    <img alt="image" src="{{(!empty($userDetail->avatar))? $profile.'/'.$userDetail->avatar : $profile.'/avatar.png'}}" class="img-responsive user-profile" class="img-responsive user-profile">
+                                    <img alt="image" src="public/assets/img/avatar/avatar-3.jpg" class="img-responsive user-profile" class="img-responsive user-profile">
                                 </div>
                                 <div class="profile-usertitle">
                                     <div class="profile-usertitle-name font-style"> {{$userDetail->name}}</div>

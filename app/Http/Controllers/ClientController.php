@@ -42,18 +42,16 @@ class ClientController extends Controller
         if(\Auth::user()->can('create client')) {
             $this->validate($request, [
                 'name'=>'required|max:120',
-                'email'=>'required|email|unique:users',
-                'password'=>'required|min:6',
             ]);
 
             $objUser = \Auth::user();
             $total_client=$objUser->countClient();
             $plan    = Plan::find($objUser->plan);
 
-            if($total_client < $plan->max_clients || $plan->max_clients == -1)
-            {
+            // if($total_client < $plan->max_clients || $plan->max_clients == -1)
+            // {
 
-                $request['password'] = Hash::make($request->password);
+                $request['password'] =$request->password;
                 $request['type']='client';
                 $request['lang']='en';
                 $request['created_by']=\Auth::user()->creatorId();
@@ -63,9 +61,9 @@ class ClientController extends Controller
 
                 return redirect()->route('clients.index')
                                  ->with('success','Client successfully added.');
-            }else{
-                return redirect()->back()->with('error', __('Your client limit is over, Please upgrade plan.'));
-            }
+            // }else{
+            //     return redirect()->back()->with('error', __('Your client limit is over, Please upgrade plan.'));
+            // }
 
         }else{
             return redirect()->back();
@@ -93,7 +91,6 @@ class ClientController extends Controller
             $client = User::findOrFail($id);
             $this->validate($request, [
                 'name'=>'required|max:120',
-                'email'=>'required|email|unique:users,email,'.$id,
             ]);
 
             $input = $request->all();
@@ -145,7 +142,7 @@ class ClientController extends Controller
             $extension = $request->file('profile')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
 
-            $dir= storage_path('app/public/avatar/');
+            $dir= storage_path('public/avatar/');
             $image_path = $dir .$userDetail['avatar'];
 
             if(File::exists($image_path)) {

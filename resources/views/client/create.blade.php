@@ -8,14 +8,14 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            {{Form::label('email',__('Email'))}}
-            {{Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Client Email'),'required'=>'required'))}}
+            {{Form::label('number',__('Telephone number'))}}
+            {{Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Client Phone number'),'required'=>'required'))}}
         </div>
     </div>
     <div class="col-md-12">
         <div class="form-group">
-            {{Form::label('password',__('Password'))}}
-            {{Form::password('password',array('class'=>'form-control','placeholder'=>__('Enter Client Password'),'minlength'=>"6",'required'=>'required'))}}
+            {{Form::label('note',__('Note'))}}
+            {{Form::password('password',array('class'=>'form-control','placeholder'=>__('Enter Client Note (ex:Address,...)'),'minlength'=>"6",'required'=>'required'))}}
         </div>
     </div>
     <div class="col-md-12 text-right">

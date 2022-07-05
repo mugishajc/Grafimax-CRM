@@ -9268,3 +9268,219 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2022-07-02 19:09:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:10:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:11:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:12:08] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:13:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:14:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:15:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 19:16:09] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2022-07-02 22:16:32] local.ERROR: Uncaught Error: Class 'FPDF_rotation' not found in D:\Projects\Laravel\Grafimax-CRM\app\Invoicr.php:5
+Stack trace:
+#0 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(571): include()
+#1 D:\Projects\Laravel\Grafimax-CRM\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile()
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Uncaught Error: Class 'FPDF_rotation' not found in D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5
+Stack trace:
+#0 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(571): include()
+#1 D:\\Projects\\Laravel\\Grafimax-CRM\\vendor\\composer\\ClassLoader.php(428): Composer\\Autoload\\includeFile()
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 Command line code(1): class_exists()
+#5 [internal function]: {closure}()
+#6 Command line code(1): array_filter()
+#7 {main}
+  thrown at D:\\Projects\\Laravel\\Grafimax-CRM\\app\\Invoicr.php:5)
+[stacktrace]
+#0 {main}
+"} 

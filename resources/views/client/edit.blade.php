@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            {{Form::label('email',__('Email'))}}
+            {{Form::label('email',__('Phone number'))}}
             {{Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Client Email')))}}
             @error('email')
             <span class="invalid-email" role="alert">
