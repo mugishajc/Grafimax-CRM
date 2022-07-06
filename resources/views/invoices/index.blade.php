@@ -36,7 +36,7 @@
                                                     <thead class="thead-light">
                                                     <tr>
                                                         <th> {{__('Invoice')}}</th>
-                                                        <th> Job</th>
+                                                        <th> Client</th>
                                                         <th> {{__('Issue Date')}}</th>
                                                         <th> {{__('Due Date')}}</th>
                                                         <th> {{__('Value')}}</th>
@@ -54,7 +54,11 @@
                                                             <td>
                                                                 <a href="{{ route('invoices.show',$invoice->id) }}" class="btn btn-outline-primary btn-sm">{{ AUth::user()->invoiceNumberFormat($invoice->id) }}</a>
                                                             </td>
-                                                            <td>{{ (isset($invoice->project) && !empty($invoice->project)) ? $invoice->project->name : '-' }}</td>
+                                                            {{--  <td>{{ (isset($invoice->project) && !empty($invoice->project)) ? $invoice->project->name : '-' }}</td>  --}}
+
+
+                                                            <td>{{ $invoice->project_id}}</td>
+                                                            
                                                             <td>{{ Auth::user()->dateFormat($invoice->issue_date) }}</td>
                                                             <td>{{ Auth::user()->dateFormat($invoice->due_date) }}</td>
                                                             <td>{{ Auth::user()->priceFormat($invoice->getTotal()) }}</td>

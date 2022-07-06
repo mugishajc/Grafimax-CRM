@@ -25,7 +25,7 @@ class InvoiceController extends Controller
         {
             if(\Auth::user()->type == 'client')
             {
-                $invoices = Invoice::select(['invoices.*'])->join('projects', 'projects.id', '=', 'invoices.project_id')->where('projects.client', '=', \Auth::user()->id)->where('invoices.created_by', '=', \Auth::user()->creatorId())->get();
+                $invoices = Invoice::select(['invoices.*'])->join('users', 'users.id', '=', 'invoices.project_id')->where('projects.client', '=', \Auth::user()->id)->where('invoices.created_by', '=', \Auth::user()->creatorId())->get();
             }
             else
             {
@@ -47,10 +47,15 @@ class InvoiceController extends Controller
             $taxes    = Tax::where('created_by', '=', \Auth::user()->creatorId())->get()->pluck('name', 'id');
             $projects = \Auth::user()->projects->pluck('name', 'id');
 
-            $taxes->prepend('Select Tax', '');
+            $kiriya=User::get()->where('type','=','client')->pluck('name','id');
+
+
+        //   dd($kiriya);
+
+            // $taxes->prepend('Select Tax', '');
             $projects->prepend('Select Project', '');
 
-            return view('invoices.create', compact('projects', 'taxes'));
+             return view('invoices.create', compact('projects', 'taxes','kiriya'));
         }
         else
         {
@@ -148,6 +153,7 @@ class InvoiceController extends Controller
                     $user = '';
                 }
 
+
                 return view('invoices.view', compact('invoice', 'settings', 'user'));
             }
             else
@@ -170,10 +176,14 @@ class InvoiceController extends Controller
                 $taxes    = Tax::where('created_by', '=', \Auth::user()->creatorId())->get()->pluck('name', 'id');
                 $projects = \Auth::user()->projects->pluck('name', 'id');
 
-                $taxes->prepend('Select Tax', '');
+                $kiriya=User::get()->where('type','=','client')->pluck('name','id');
+
+
+                // $taxes->prepend('Select Tax', '');
+                $kiriya->prepend('Select Client name', '');
                 $projects->prepend('Select Project', '');
 
-                return view('invoices.edit', compact('invoice', 'projects', 'taxes'));
+                return view('invoices.edit', compact('invoice', 'projects', 'taxes','kiriya'));
             }
             else
             {

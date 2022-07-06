@@ -1,8 +1,8 @@
 {{ Form::open(array('url' => 'invoices')) }}
 <div class="row">
     <div class="form-group  col-md-6">
-        {{ Form::label('project_id', __('Project')) }}
-        {{ Form::select('project_id', $projects,null, array('class' => 'form-control font-style selectric')) }}
+        {{ Form::label('project_id', __('Client name')) }}
+        {{ Form::select('project_id', $kiriya,null, array('class' => 'form-control font-style selectric')) }}
         @error('project_id')
         <span class="invalid-project_id" role="alert">
             <strong class="text-danger">{{ $message }}</strong>

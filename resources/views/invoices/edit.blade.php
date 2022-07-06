@@ -1,8 +1,8 @@
 {{ Form::model($invoice, array('route' => array('invoices.update', $invoice->id), 'method' => 'PUT')) }}
 <div class="row">
     <div class="form-group  col-md-6">
-        {{ Form::label('project_id', __('Project')) }}
-        {{ Form::select('project_id', $projects,null, array('class' => 'form-control font-style selectric','required'=>'required')) }}
+        {{ Form::label('project_id', __('Client')) }}
+        {{ Form::select('project_id', $kiriya,null, array('class' => 'form-control font-style selectric','required'=>'required')) }}
         @error('project_id')
         <span class="invalid-project_id" role="alert">
             <strong class="text-danger">{{ $message }}</strong>

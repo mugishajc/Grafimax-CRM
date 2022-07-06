@@ -36,7 +36,7 @@
                                                     <thead class="thead-light">
                                                     <tr>
                                                         <th> <?php echo e(__('Invoice')); ?></th>
-                                                        <th> Job</th>
+                                                        <th> Client</th>
                                                         <th> <?php echo e(__('Issue Date')); ?></th>
                                                         <th> <?php echo e(__('Due Date')); ?></th>
                                                         <th> <?php echo e(__('Value')); ?></th>
@@ -54,7 +54,9 @@
                                                             <td>
                                                                 <a href="<?php echo e(route('invoices.show',$invoice->id)); ?>" class="btn btn-outline-primary btn-sm"><?php echo e(AUth::user()->invoiceNumberFormat($invoice->id)); ?></a>
                                                             </td>
-                                                            <td><?php echo e((isset($invoice->project) && !empty($invoice->project)) ? $invoice->project->name : '-'); ?></td>
+                                                            
+
+                                                            <td><?php echo e($invoice->project_id); ?></td>
                                                             <td><?php echo e(Auth::user()->dateFormat($invoice->issue_date)); ?></td>
                                                             <td><?php echo e(Auth::user()->dateFormat($invoice->due_date)); ?></td>
                                                             <td><?php echo e(Auth::user()->priceFormat($invoice->getTotal())); ?></td>
