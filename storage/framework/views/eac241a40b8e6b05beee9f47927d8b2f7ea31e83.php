@@ -56,7 +56,9 @@
                                                             </td>
                                                             
 
-                                                            <td><?php echo e($invoice->project_id); ?></td>
+
+                                                            <td><?php echo e($invoice->id); ?></td>
+
                                                             <td><?php echo e(Auth::user()->dateFormat($invoice->issue_date)); ?></td>
                                                             <td><?php echo e(Auth::user()->dateFormat($invoice->due_date)); ?></td>
                                                             <td><?php echo e(Auth::user()->priceFormat($invoice->getTotal())); ?></td>

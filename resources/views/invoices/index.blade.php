@@ -57,8 +57,8 @@
                                                             {{--  <td>{{ (isset($invoice->project) && !empty($invoice->project)) ? $invoice->project->name : '-' }}</td>  --}}
 
 
-                                                            <td>{{ $invoice->project_id}}</td>
-                                                            
+                                                            <td>{{ $invoice->id}}</td>
+
                                                             <td>{{ Auth::user()->dateFormat($invoice->issue_date) }}</td>
                                                             <td>{{ Auth::user()->dateFormat($invoice->due_date) }}</td>
                                                             <td>{{ Auth::user()->priceFormat($invoice->getTotal()) }}</td>

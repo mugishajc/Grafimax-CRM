@@ -2,23 +2,25 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            <input type="text" class="form-control font-style" value="{{$invoice->project->name}}" readonly>
+            {{--  <input type="text" class="form-control font-style" value="{{$invoice->project->name}}" readonly>  --}}
+
+            <input type="text" class="form-control font-style" value="{{$invoice_user}}" readonly>
         </div>
     </div>
-    <div class="col-md-4 mb-10">
+    {{--  <div class="col-md-4 mb-10">
         <div class="custom-control custom-radio">
             <input type="radio" class="custom-control-input" id="customRadio5" name="type" value="milestone" checked="checked" onclick="hide_show(this)">
             <label class="custom-control-label" for="customRadio5">{{__('Milestone & Task')}}</label>
         </div>
-    </div>
-    <div class="col-md-4 mb-10">
+    </div>  --}}
+    {{--  <div class="col-md-4 mb-10">
         <div class="custom-control custom-radio">
             <input type="radio" class="custom-control-input" id="customRadio6" name="type" value="other" onclick="hide_show(this)">
             <label class="custom-control-label" for="customRadio6">{{__('Other')}}</label>
         </div>
-    </div>
+    </div>  --}}
 </div>
-<div id="milestone">
+{{--  <div id="milestone">
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
@@ -43,7 +45,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 <div id="other" style="display: none">
     <div id="milestone">
         <div class="row">
@@ -53,6 +55,23 @@
                     <input type="text" class="form-control font-style" name="title">
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="title">{{__('Select Product item')}}</label>
+
+            <select name="title" class="form-control font-style">
+        @foreach ($item_invoice as $item_invoice )
+
+     <option value="{{ $item_invoice->name }}" >{{ $item_invoice->name }} --- Price per 1 = {{ $item_invoice->price }}</option>
+
+        @endforeach
+    </select>
+            {{--  <input type="text" class="form-control font-style" name="title" required>  --}}
+
         </div>
     </div>
 </div>

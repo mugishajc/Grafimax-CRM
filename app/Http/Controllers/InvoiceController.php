@@ -25,14 +25,19 @@ class InvoiceController extends Controller
         {
             if(\Auth::user()->type == 'client')
             {
-                $invoices = Invoice::select(['invoices.*'])->join('users', 'users.id', '=', 'invoices.project_id')->where('projects.client', '=', \Auth::user()->id)->where('invoices.created_by', '=', \Auth::user()->creatorId())->get();
+                $invoices = Invoice::select(['invoices.*'])->join('projects', 'projects.id', '=', 'invoices.project_id')->where('projects.client', '=', \Auth::user()->id)->where('invoices.created_by', '=', \Auth::user()->creatorId())->get();
             }
             else
             {
                 $invoices = Invoice::where('created_by', '=', \Auth::user()->creatorId())->get();
             }
 
-            return view('invoices.index')->with('invoices', $invoices);
+         $inv=Invoice::get()->pluck('project_id','id');
+
+         $query= User::select(['users.name'])->join('invoices','invoices.project_id','=','users.id')->get();
+
+             //dd($query);
+             return view('invoices.index')->with('invoices', $invoices);
         }
         else
         {
@@ -275,7 +280,14 @@ class InvoiceController extends Controller
                 $milestones = Milestone::where('project_id', $invoice->project_id)->get();
                 $tasks      = Task::where('project_id', $invoice->project_id)->get();
 
-                return view('invoices.product', compact('invoice', 'milestones', 'tasks'));
+
+                $invoice_user=User::get()->where('id','=',$invoice->project_id)->pluck('name','id');
+
+
+                $item_invoice=Products::all();
+
+                //   dd($item_invoice);
+                return view('invoices.product', compact('invoice', 'milestones', 'tasks','invoice_user','item_invoice'));
             }
             else
             {
@@ -325,8 +337,8 @@ class InvoiceController extends Controller
                 {
                     $validator = \Validator::make(
                         $request->all(), [
-                                           'title' => 'required',
-                                           'price' => 'required',
+                                        // //    'title' => 'required',
+                                        //    'price' => 'required',
                                        ]
                     );
                     if($validator->fails())
@@ -342,21 +354,22 @@ class InvoiceController extends Controller
                 }
 
 
-                InvoiceProduct::create(
-                    [
-                        'invoice_id' => $invoice->id,
-                        'iteam' => $item,
-                        'price' => $price,
-                        'type' => $request->type,
-                    ]
-                );
+dd($request->title);
+                // InvoiceProduct::create(
+                //     [
+                //         'invoice_id' => $invoice->id,
+                //         'iteam' => $request->title,
+                //         'price' => $price,
+                //         'type' => 'other',
+                //     ]
+                // );
 
-                if($invoice->getTotal() > 0.0 || $invoice->getDue() < 0.0)
-                {
-                    Invoice::change_status($invoice->id, 2);
-                }
+                // if($invoice->getTotal() > 0.0 || $invoice->getDue() < 0.0)
+                // {
+                //     Invoice::change_status($invoice->id, 2);
+                // }
 
-                return redirect()->route('invoices.show', $invoice->id)->with('success', __('Product successfully added.'));
+                // return redirect()->route('invoices.show', $invoice->id)->with('success', __('Product successfully added.'));
             }
             else
             {
@@ -378,6 +391,7 @@ class InvoiceController extends Controller
             {
                 $product  = InvoiceProduct::find($product_id);
                 $products = Products::where('created_by', '=', \Auth::user()->creatorId())->get()->pluck('name', 'id');
+
 
                 return view('invoices.product', compact('invoice', 'products', 'product'));
             }
